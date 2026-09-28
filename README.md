@@ -158,3 +158,4 @@ To verify the platform for a **Ministry of Coal / CIL Technical Evaluation Commi
 Developed for official technical evaluation under **CMPDI / Coal India Limited (CIL) / Ministry of Coal** operational standards.
 *All data provided in default demonstration mode is realistically modeled and clearly watermarked as **DEMO DATA** in accordance with Section 34.*
 # Mining-Goal
+# Mining-Goal
