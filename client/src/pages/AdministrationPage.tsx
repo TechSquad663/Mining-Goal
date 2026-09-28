@@ -8,9 +8,8 @@ export const AdministrationPage: React.FC = () => {
   const [health, setHealth] = useState<any>(null);
 
   useEffect(() => {
-    fetch('/api/users')
-      .then(res => res.json())
-      .then(d => setUsers(d.users || []))
+    api.getUsers()
+      .then(usersList => setUsers(usersList))
       .catch(console.error);
 
     api.getSystemHealth().then(setHealth).catch(console.error);

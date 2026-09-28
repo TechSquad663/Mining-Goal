@@ -17,10 +17,9 @@ export const Topbar: React.FC<TopbarProps> = ({ onOpenSearch, currentUser, onUse
 
   useEffect(() => {
     api.getNotifications().then(setNotifications).catch(console.error);
-    fetch('/api/users')
-      .then(res => res.json())
-      .then(data => {
-        if (data.users) setUsersList(data.users);
+    api.getUsers()
+      .then(users => {
+        if (users) setUsersList(users);
       })
       .catch(console.error);
   }, []);

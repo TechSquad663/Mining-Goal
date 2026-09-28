@@ -12,9 +12,17 @@ import {
   ReportStatus 
 } from '../types';
 
-const API_BASE = '/api';
+const BASE_URL = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+export const API_BASE = BASE_URL ? `${BASE_URL}/api` : '/api';
 
 export const api = {
+  // Users
+  async getUsers(): Promise<User[]> {
+    const res = await fetch(`${API_BASE}/users`);
+    const data = await res.json();
+    return data.users || [];
+  },
+
   // Auth
   async getCurrentUser(): Promise<User> {
     const res = await fetch(`${API_BASE}/auth/me`);
