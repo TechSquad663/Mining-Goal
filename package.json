@@ -1,0 +1,17 @@
+{
+  "name": "coalintelligence-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "COALINTELLIGENCE AI - Enterprise Geological, Mining & Reporting Intelligence Platform",
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"bgBlue.bold,bgYellow.bold\" \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
